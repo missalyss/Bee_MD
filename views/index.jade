@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 bee md
+
+  p bee md is a restful API that gives users information on how to keep for bees--there is a glossary, and a table of symptoms, causes, and treatments/preventions. how to use this API:
+
+  ul
+
+    li: a(href='/symptoms') Symptoms
+
+    li: a(href='/causes') Causes
+
+    li: a(href='/treatments') Treatments
+
+    li: a(href='/glossary') Glossary
+
+  br
+  p get one for any table: '/tablename/id'
+  p create for any table: '/tablename'
+  p put for any table: '/tablename/id'
+  p delete for any table: '/tablename/id'
