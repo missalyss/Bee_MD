@@ -4,7 +4,7 @@ const knex = require('../db/connection')
 
 // INDEX CAUSES
 router.get('/', function(req, res, next) {
-  knex('causes').then(allCauses => {
+  knex.select('causes.id as causes_id', 'glossary.id as glossary_pk_id', 'causes.cause', 'causes.why', 'glossary.word', 'glossary.meaning').from('causes').leftOuterJoin('glossary', 'glossary.id', 'causes.glossary_id').then(allCauses => {
     res.json(allCauses)
   })
 })
