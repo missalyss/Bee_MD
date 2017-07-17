@@ -7,6 +7,9 @@ router.get('/', function(req, res, next) {
   knex.select('causes.id as causes_id', 'glossary.id as glossary_pk_id', 'causes.cause', 'causes.why', 'glossary.word', 'glossary.meaning').from('causes').leftOuterJoin('glossary', 'glossary.id', 'causes.glossary_id').then(allCauses => {
     res.json(allCauses)
   })
+  .catch(err => {
+    console.error('error ', err)
+  })
 })
 
 // SHOW CAUSE
@@ -15,12 +18,18 @@ router.get('/:id', function(req, res, next) {
   knex('causes').where({id}).then(thisCause => {
     res.json(thisCause)
   })
+  .catch(err => {
+    console.error('error ', err)
+  })
 })
 
 // CREATE CAUSE
 router.post('/', function(req, res, next) {
   knex('causes').insert(req.body, '*').then(newCause => {
     res.json(newCause)
+  })
+  .catch(err => {
+    console.error('error ', err)
   })
 })
 
@@ -30,6 +39,9 @@ router.put('/:id', function(req, res, next) {
   knex('causes').where({id}).update(req.body, '*').then(updatedCause => {
     res.json(updatedCause)
   })
+  .catch(err => {
+    console.error('error ', err)
+  })
 })
 
 // DESTROY CAUSE
@@ -37,6 +49,9 @@ router.delete('/:id', function(req, res, next) {
   const id = req.params.id
   knex('causes').where({id}).del().then(() => {
     res.send()
+  })
+  .catch(err => {
+    console.error('error ', err)
   })
 })
 

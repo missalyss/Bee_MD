@@ -16,12 +16,12 @@ exports.seed = function(knex, Promise) {
           id: 3, symptom: 'queen cups', glossary_id: 11,
         details: 'located on the bottom of the frame'
       }
-      ]);
+      ])
     }).then(function () {
       return knex.raw(
         "SELECT setval('symptoms_id_seq', (SELECT MAX (id) FROM symptoms))"
       )
     }).catch(function (error) {
-      console.error("Red Alert! ", error);
+      console.error("Red Alert! ", error)
     })
 }

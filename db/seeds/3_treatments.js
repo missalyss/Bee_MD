@@ -20,12 +20,12 @@ exports.seed = function(knex, Promise) {
           id: 4, title: 'one form of mite management',
           instructions: "We will monitor and adjust the frequency of the resonators. He has this ability of instantly interpreting and extrapolating any verbal communication he hears. It may be due to the envelope over the structure, causing hydrogen-carbon helix patterns throughout. I'm comparing the molecular integrity of that bubble against our phasers."
         }
-      ]);
+      ])
     }).then(function () {
       return knex.raw(
         "SELECT setval('treatments_id_seq', (SELECT MAX (id) FROM treatments))"
       )
     }).catch(function (error) {
-      console.error("Red Alert! ", error);
+      console.error("Red Alert! ", error)
     })
 }

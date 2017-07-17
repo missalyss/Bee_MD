@@ -16,12 +16,12 @@ exports.seed = function(knex, Promise) {
           id: 3, cause: 'not enough ventilation',
           why: "bees need ventilation to not get overheated in the hive"
         }
-      ]);
+      ])
     }).then(function () {
       return knex.raw(
         "SELECT setval('causes_id_seq', (SELECT MAX (id) FROM causes))"
       )
     }).catch(function (error) {
-      console.error("Red Alert! ", error);
+      console.error("Red Alert! ", error)
     })
 }
