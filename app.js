@@ -14,10 +14,12 @@ var glossary = require('./routes/glossary')
 
 var app = express()
 app.use(allowCrossDomain)
-// view engine setup
+
+// VIEWS ENGINE
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jade')
 
+// PARSE AND SETUP, ETC.
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
 app.use(bodyParser.json())
@@ -25,19 +27,21 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
+// SET UP ROUTES FOR API
 app.use('/symptoms', symptoms)
 app.use('/causes', causes)
 app.use('/treatments', treatments)
 app.use('/glossary', glossary)
 app.use('/', index)
 
+// ALL CROSS DOMAIN, CORS
 function allowCrossDomain (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With')
 
   if ('OPTIONS' == req.method) {
-    res.status(200)
+    res.sendStatus(200)
   } else {
     next()
   }
