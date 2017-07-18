@@ -2,6 +2,7 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('causes_treatments', function(t){
+    t.increments()
     t.integer('cause_id').notNullable()
     t.integer('treatment_id').notNullable()
     t.integer('votes')

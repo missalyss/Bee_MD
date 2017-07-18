@@ -11,6 +11,7 @@ var symptoms = require('./routes/symptoms')
 var causes = require('./routes/causes')
 var treatments = require('./routes/treatments')
 var glossary = require('./routes/glossary')
+var joins = require('./routes/joins')
 
 var app = express()
 app.use(allowCrossDomain)
@@ -33,6 +34,8 @@ app.use('/causes', causes)
 app.use('/treatments', treatments)
 app.use('/glossary', glossary)
 app.use('/', index)
+app.use('/joins', joins)
+
 
 // ALL CROSS DOMAIN, CORS
 function allowCrossDomain (req, res, next) {
