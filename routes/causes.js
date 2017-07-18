@@ -4,8 +4,10 @@ const knex = require('../db/connection')
 
 // INDEX CAUSES
 router.get('/', function(req, res, next) {
-  knex.select('causes.id as causes_id', 'glossary.id as glossary_pk_id', 'causes.cause', 'causes.why', 'glossary.word', 'glossary.meaning').from('causes').leftOuterJoin('glossary', 'glossary.id', 'causes.glossary_id').then(allCauses => {
-    res.json(allCauses)
+  knex('causes')
+  // .select('causes.id as causes_id', 'glossary.id as glossary_pk_id', 'causes.cause', 'causes.why', 'glossary.word', 'glossary.meaning').from('causes').leftOuterJoin('glossary', 'glossary.id', 'causes.glossary_id')
+  .then(totalResult => {
+    res.json(totalResult);
   })
   .catch(err => {
     console.error('error ', err)
@@ -15,7 +17,11 @@ router.get('/', function(req, res, next) {
 // SHOW CAUSE
 router.get('/:id', function(req, res, next) {
   const id = req.params.id
-  knex('causes').where({id}).then(thisCause => {
+  knex.select('*', 'causes.glossary_id as cause_gloss_id', 'symptoms.glossary_id as symptom_gloss_id').from('causes')
+  .where('causes.id', id)
+  .innerJoin('symptoms_causes', 'symptoms_causes.cause_id', 'causes.id')
+  .innerJoin('symptoms', 'symptoms_causes.symptom_id', 'symptoms.id')
+  .then(thisCause => {
     res.json(thisCause)
   })
   .catch(err => {
