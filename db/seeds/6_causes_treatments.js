@@ -12,7 +12,10 @@ exports.seed = function(knex, Promise) {
         },
         {
           cause_id: 3, treatment_id: 2, votes: 13
-        }
+        },
+        {
+          cause_id: 1, treatment_id: 1, votes: 6
+        },
       ])
     }).catch(function (error) {
       console.error("Red Alert! ", error)

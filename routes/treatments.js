@@ -15,13 +15,30 @@ router.get('/', function(req, res, next) {
 // SHOW TREATMENT
 router.get('/:id', function(req, res, next) {
   const id = req.params.id
-  knex('treatments').where({id}).then(thisTreatment => {
+  knex.select('*').from('treatments').where('treatments.id', id)
+  .leftOuterJoin('causes_treatments', 'causes_treatments.treatment_id', 'treatments.id')
+  .leftOuterJoin('causes', 'causes_treatments.cause_id', 'causes.id')
+  .then(thisTreatment => {
     res.json(thisTreatment)
   })
   .catch(err => {
     console.error('error ', err)
   })
 })
+
+// router.get('/:id', function(req, res, next) {
+//   const id = req.params.id
+//   knex.select('*', 'causes.glossary_id as cause_gloss_id', 'symptoms.glossary_id as symptom_gloss_id').from('symptoms')
+//   .where('symptoms.id', id)
+//   .innerJoin('causes_symptoms', 'symptoms_causes.symptom_id', 'symptoms.id')
+//   .innerJoin('causes', 'symptoms_causes.cause_id', 'causes.id')
+//   .then(symptomCause => {
+//       res.json(symptomCause)
+//   })
+//   .catch(err => {
+//     console.error('error ', err)
+//   })
+// })
 
 // CREATE TREATMENT
 router.post('/', function(req, res, next) {
