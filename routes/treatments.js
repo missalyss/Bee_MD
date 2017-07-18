@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 // SHOW TREATMENT
 router.get('/:id', function(req, res, next) {
   const id = req.params.id
-  knex.select('*').from('treatments').where('treatments.id', id)
+  knex.select('*', 'causes_treatments.id as ct_id').from('treatments').where('treatments.id', id)
   .leftOuterJoin('causes_treatments', 'causes_treatments.treatment_id', 'treatments.id')
   .leftOuterJoin('causes', 'causes_treatments.cause_id', 'causes.id')
   .then(thisTreatment => {
