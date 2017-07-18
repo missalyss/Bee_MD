@@ -23,6 +23,21 @@ router.get('/:id', function(req, res, next) {
   })
 })
 
+// router.get('/:id', function(req, res, next) {
+//   const id = req.params.id
+//   knex.select('*', 'causes.glossary_id as cause_gloss_id', 'symptoms.glossary_id as symptom_gloss_id').from('symptoms')
+//   .where('symptoms.id', id)
+//   .innerJoin('symptoms_causes', 'symptoms_causes.symptom_id', 'symptoms.id')
+//   .innerJoin('causes', 'symptoms_causes.cause_id', 'causes.id')
+//   .then(symptomCause => {
+//       res.json(symptomCause)
+//     })
+//   })
+//   .catch(err => {
+//     console.error('error ', err)
+//   })
+// })
+
 // CREATE SYMPTOM
 router.post('/', function(req, res, next) {
   knex('symptoms').insert(req.body, '*').then(newSymptom => {

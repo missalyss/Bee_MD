@@ -17,12 +17,21 @@ router.get('/', function(req, res, next) {
 // SHOW CAUSE
 router.get('/:id', function(req, res, next) {
   const id = req.params.id
+  let causeJoins = {}
   knex.select('*', 'causes.glossary_id as cause_gloss_id', 'symptoms.glossary_id as symptom_gloss_id').from('causes')
   .where('causes.id', id)
   .innerJoin('symptoms_causes', 'symptoms_causes.cause_id', 'causes.id')
   .innerJoin('symptoms', 'symptoms_causes.symptom_id', 'symptoms.id')
-  .then(thisCause => {
-    res.json(thisCause)
+  .then(causeAndSymptom => {
+    causeJoins.causeSympt = causeAndSymptom
+    return knex.select('*').from('causes')
+    .where('causes.id', id)
+    .innerJoin('causes_treatments', 'causes_treatments.cause_id', 'causes.id')
+    .innerJoin('treatments', 'causes_treatments.treatment_id', 'treatments.id')
+    .then(causeAndTreatment => {
+      causeJoins.causeTreat = causeAndTreatment
+      res.json(causeJoins)
+    })
   })
   .catch(err => {
     console.error('error ', err)
