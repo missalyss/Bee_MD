@@ -5,20 +5,34 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return knex('treatments').insert([
         {
-          id: 1, title: 'checkerboarding',
-          instructions: "It indicates a synchronic distortion in the areas emanating triolic waves. The cerebellum, the cerebral cortex, the brain stem,  the entire nervous system has been depleted of electrochemical energy. Any device like that would produce high levels of triolic waves. These walls have undergone some kind of selective molecular polarization. I haven't determined if our phaser energy can generate a stable field. We could alter the photons with phase discriminators."
+          id: 1, title: 'Checkerboarding',
+          instructions: "The goal of Checkboarding is to keep them in the build-up phase until after Reproductive swarm cut-off by making them think they don't have enough stores and giving the brood nest room to expand. If you look at your bees and your blooms and your climate, this Reproductive cut-off is usually the peak of the apple blossoms or a week after the apples START to bloom.
+          The time to do Checkboarding is 9 weeks before that. That's about when the Elm blooms or four weeks before the Maples bloom or five weeks before the Redbud blooms or eight weeks before the apples start blooming or ten weeks before the black locust starts blooming. Hopefully you have some idea when one of those blooms in your location.
+          NOTE: in theory these are all ways of pinpointing the same stage of vegetative development, they are just different reference points to figure it out for your location, I'm just listing all the different blooms in case you know when one of them is to calculate from. At that time (9 weeks before Reproductive cut-off/the peak of the apple blossoms) you checkerboard. You put alternating frames of capped honey and empty drawn comb above the brood nest."
         },
         {
-          id: 2, title: 'ventilation',
-          instructions: "Exceeding reaction chamber thermal limit. We have begun power-supply calibration. Force fields have been established on all turbo lifts and crawlways. Computer, run a level-two diagnostic on warp-drive systems. Antimatter containment positive. Warp drive within normal parameters. I read an ion trail characteristic of a freighter escape pod. The bomb had a molecular-decay detonator. Detecting some unusual fluctuations in subspace frequencies."
+          id: 2, title: 'Ventilation',
+          instructions: "1. In summer, the lower (main) entrance should be fully open in a strong and healthy hive. This not only allows for vast amounts of traffic but increases air flow as well. Weak colonies—especially those in areas prone to yellow jacket attacks—should have their entrances reduced to a size they can easily defend. 2. Upper entrances increase air circulation and often aid in reducing congestion. Many of the returning foragers will use an upper entrance if it is available. Upper entrances range in size from a tiny slot about ?-inch high by ¾-inch wide (1 x 2 cm) to the equivalent of a full main entrance."
         },
         {
-          id: 3, title: 'destroy queen cups',
-          instructions: "I have reset the sensors to scan for frequencies outside the usual range. By emitting harmonic vibrations to shatter the lattices. We will monitor and adjust the frequency of the resonators. He has this ability of instantly interpreting and extrapolating any verbal communication he hears. It may be due to the envelope over the structure, causing hydrogen-carbon helix patterns throughout. I'm comparing the molecular integrity of that bubble against our phasers."
+          id: 3, title: 'Destroy Queen Cups',
+          instructions: "If With the use of your hive tool, carefully destroy the queen cup so that an egg cannot be laid in it. Destroying queen cells (meaning that there is already an egg forming in the cell), it can only postpone the inevitable and most likely leave the hive queenless."
         },
         {
-          id: 4, title: 'one form of mite management',
-          instructions: "We will monitor and adjust the frequency of the resonators. He has this ability of instantly interpreting and extrapolating any verbal communication he hears. It may be due to the envelope over the structure, causing hydrogen-carbon helix patterns throughout. I'm comparing the molecular integrity of that bubble against our phasers."
+          id: 4, title: 'Sugar Shake',
+          instructions: "1. Remove 1 or 2 frames of bees from the brood nest. Ideally, these frames will contain open brood and nurse bees. Make sure the frames you shake do not include the queen. 2. Shake the frames over your bucket. Don’t bang the frames, just shake. 3. Take your bucket of bees, tap it so the bees collect on the bottom, and then pour them into your mason jar up to the 1/2-cup line. This will give you approximately 400* bees. 4. Quickly screw on the modified lid. 5. Pour the rest of the bees back in the hive. 6. Spoon some confectioners sugar onto the mesh screen and work it through with your fingers. 7. Shake the bees in the jar for about a minute to completely coat both bees and mites, using as much sugar as necessary. 8. Invert the jar and shake it into your light-colored dish. Keep shaking until mites and sugar stop falling out. 9. Add a small amount of water to your dish of mites. This dissolves the sugar and makes the mites easier to see. 10. Count the mites."
+        },
+        {
+          id: 5, title: 'Bottom Supering',
+          instructions: "Place honey supers under all the existing supers, directly on top of the brood box. The theory is the bees will work it better when it's directly above the brood chamber; as opposed to TOP supering which would be just putting the supers on top of the existing supers."
+        },
+        {
+          id: 6, title: 'Re-Brood',
+          instructions: "To supplement the population with brood from another colony, pull frames out of the stronger colony and put it into the hurting hive."
+        },
+        {
+          id: 7, title: 'Light Trap',
+          instructions: "A light trap is just a lamp that you place outside at night. Beneath the light is a container  to capture honey bees that die at the light source. You collect your dead honey bees from the container and place them into a different resealable container, something like a mason jar works well. You wait 5 to 14 days, then look for any larvae that crawl out from the necks of the bees—right between the head and the thorax. You also look for pupae and then wait to see if they hatch into adult flies."
         }
       ])
     }).then(function () {

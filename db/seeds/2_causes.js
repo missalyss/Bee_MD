@@ -5,16 +5,28 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return knex('causes').insert([
         {
-          id: 1, cause: 'swarming', glossary_id: 12,
-          why: "you're going to lose half your hive unless you give them a reason to stay. This could cause problems between you and your neighbors, or, if your bees aren't as strong as they think they are, the entire hive could die."
+          id: 1, cause: 'Swarming', glossary_id: 12,
+          why: "Swarming usually occurs in mid to late spring, mid-morning to mid-afternoon. Makes a loud roar and may cover the hive, and cloud around it."
         },
         {
-          id: 2, cause: 'varroa mites', glossary_id: 13,
+          id: 2, cause: 'Varroa Mite Infestation', glossary_id: 13,
           why: "mites are sucking the blood of bees; it causes a weak hive and deformed bees"
         },
         {
-          id: 3, cause: 'not enough ventilation',
-          why: "bees need ventilation to not get overheated in the hive"
+          id: 3, cause: 'Poor Ventilation',
+          why: "The hive is poorly ventilated and the bees are too hot or humid. Especially occurs in the summer."
+        },
+        {
+          id: 4, cause: 'Chronic Paralysis Virus',
+          why: "Because the healthy workers in a colony will quickly get rid of the infected bees, Chronic Bee Paralysis Virus rarely takes out a whole colony and is considered only a “minor” honey bee disease. However, if you find large numbers of such bees, the colony can be fortified by  Usually, an infected hive will recover on its own."
+        },
+        {
+          id: 5, cause: 'Zombee Infestation', glossary_id: 17,
+          why: "The parasitic adult fly lands on a honey bee abdomen and pierces the exoskeleton with her ovipositor. The fly’s eggs pass through the ovipositor and into the body of the honey bee in just a few seconds. When the eggs hatch, the larvae munch on bee innards. Eventually the honey bee dies and the larvae chew their way to the outside, exiting the bee between the head and thorax."
+        },
+        {
+          id: 6, cause: 'Queen Rejection',
+          why: "If your queen has just been introduced, your hive may have rejected her and killed her. If she has been around for a while, but is getting old, or is laying poorly, the nurse bees may be deciding to replace her with someone more fit to be queen."
         }
       ])
     }).then(function () {
