@@ -27,6 +27,14 @@ exports.seed = function(knex, Promise) {
         {
           id: 6, cause: 'Queen Rejection',
           why: "If your queen has just been introduced, your hive may have rejected her and killed her. If she has been around for a while, but is getting old, or is laying poorly, the nurse bees may be deciding to replace her with someone more fit to be queen."
+        },
+        {
+          id: 7, cause: 'Worker Queen',
+          why: "When the hive is queenless, and therefore broodless, for several weeks sometimes some workers develop the ability to lay eggs. It's not actually the lack of a queen, but the lack of brood. But the lack of brood is caused by the lack of a queen. These are usually haploid (infertile with a half set of chromosomes) and will all develop into drones."
+        },
+        {
+          id: 8, cause: 'Wax Moth Infestation',
+          why: "Galleria mellonella (greater wax moth) and Achroia grisella (lesser wax moth). Both will invade unguarded comb during the season when they are active. They prefer comb with pollen in it and as a second choice comb with cocoons in it, but they will even live on pure wax with nothing in it."
         }
       ])
     }).then(function () {

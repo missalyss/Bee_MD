@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return knex('treatments').insert([
         {
-          id: 1, title: 'Checkerboarding',
+          id: 1, title: 'Checker-boarding',
           instructions: "The goal of Checkboarding is to keep them in the build-up phase until after Reproductive swarm cut-off by making them think they don't have enough stores and giving the brood nest room to expand. If you look at your bees and your blooms and your climate, this Reproductive cut-off is usually the peak of the apple blossoms or a week after the apples START to bloom. The time to do Checkboarding is 9 weeks before that. That's about when the Elm blooms or four weeks before the Maples bloom or five weeks before the Redbud blooms or eight weeks before the apples start blooming or ten weeks before the black locust starts blooming. Hopefully you have some idea when one of those blooms in your location. NOTE: in theory these are all ways of pinpointing the same stage of vegetative development, they are just different reference points to figure it out for your location, I'm just listing all the different blooms in case you know when one of them is to calculate from. At that time (9 weeks before Reproductive cut-off/the peak of the apple blossoms) you checkerboard. You put alternating frames of capped honey and empty drawn comb above the brood nest."
         },
         {
@@ -31,6 +31,14 @@ exports.seed = function(knex, Promise) {
         {
           id: 7, title: 'Light Trap',
           instructions: "A light trap is just a lamp that you place outside at night. Beneath the light is a container  to capture honey bees that die at the light source. You collect your dead honey bees from the container and place them into a different resealable container, something like a mason jar works well. You wait 5 to 14 days, then look for any larvae that crawl out from the necks of the bees—right between the head and the thorax. You also look for pupae and then wait to see if they hatch into adult flies."
+        },
+        {
+          id: 8, title: 'Re-Queen',
+          instructions: "Purchase a new queen in a queen cage, where she will have some attendants and a candy plug separating her from the hive. Rubber-band her to one frame that doesn't have drawn comb, and within two to three days, the bees outside and inside the cage will consume the candy plug. If they don't reject her and kill her, they will accept her as their new queen. If your hive is ready to abscond, you may have to push the queen right in there, hoping that the hive will not reject her."
+        },
+        {
+          id: 9, title: 'Wax Moth Control',
+          instructions: "The reason a colony gets infested is that it is weak. Prevention is not to give them more territory than they can guard, in other words, don't leave a lot of drawn comb on a hive that is small and struggling. Once they are infested, the solution is to reduce them down to just the space the cluster of bees can cover. Remove all the rest of the comb. If you have a freezer, freeze it to kill the moths, or if it's too far gone, let the moths finish cleaning it up. If they get to go to the logical end they will turn all the comb into webs that just fall out of the frames or off of plastic foundation. If it's only got a tunnel or two in it, freezing is a way to save the comb. "
         }
       ])
     }).then(function () {

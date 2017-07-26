@@ -27,6 +27,15 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 8, cause_id: 1, treatment_id: 5, votes: 8
+        },
+        {
+          id: 9, cause_id: 7, treatment_id: 8, votes: 5
+        },
+        {
+          id: 10, cause_id: 6, treatment_id: 8, votes: 7
+        },
+        {
+          id: 11, cause_id: 8, treatment_id: 9, votes: 9
         }
       ])
     }).catch(function (error) {

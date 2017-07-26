@@ -31,6 +31,14 @@ exports.seed = function(knex, Promise) {
         {
           id: 7, symptom: 'Supercedure Cell', glossary_id: 11,
           details: "A queen cell hanging off the middle of the frame somewhere is usually a supersedure or 'emergency' queen cell. Supersedure cells are often begun after the eggs are laid. The bees, knowing they need to replace the queen, begin feeding royal jelly to a young larva they have selected. They build a supersedure cell around this larva (or several larvae) and it hangs down from the face of the comb."
+        },
+        {
+          id: 8, symptom: 'Double Egg-Laying',
+          details: "Sometimes a queen, when she starts laying after a time of not laying, will lay a few double eggs but she usually stops after a day or two. The laying workers will lay three or four to a cell in almost every cell. The difficulty is that the bees think they have a queen (the laying workers) and will not accept one. The laying workers are virtually impossible to find. I have found one in a two frame nuc by studying every bee until I saw one lay, but this is impractical in a full sized hive since there would be too many bees and too many laying workers."
+        },
+        {
+          id: 9, symptom: 'Wax Moths',
+          details: "They take advantage of a weak hive and live on pollen, honey and burrow through the wax. They leave a trail of webs and feces. Sometimes they are hard to spot because they try to hide from the bees. They burrow down the mid rib (mostly in the brood chamber but sometimes in the supers) and they burrow in the grooves in the frames."
         }
       ])
     }).then(function () {

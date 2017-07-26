@@ -28,7 +28,12 @@ exports.seed = function(knex, Promise) {
         {
           id: 8, symptom_id: 7, cause_id: 6, votes: 7
         },
-        
+        {
+          id: 9, symptom_id: 8, cause_id: 7, votes: 11
+        },
+        {
+          id: 10, symptom_id: 9, cause_id: 8, votes: 9
+        }
       ])
     }).catch(function (error) {
       console.error("Red Alert! ", error)
