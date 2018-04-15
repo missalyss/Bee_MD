@@ -35,6 +35,10 @@ exports.seed = function(knex, Promise) {
           id: 10, symptom_id: 9, cause_id: 8, votes: 9
         }
       ])
+    }).then(function () {
+      return knex.raw(
+        "SELECT setval('symptoms_causes_id_seq', (SELECT MAX (id) FROM symptoms_causes))"
+      )
     }).catch(function (error) {
       console.error("Red Alert! ", error)
     })

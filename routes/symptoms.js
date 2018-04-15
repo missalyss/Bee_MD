@@ -29,7 +29,8 @@ router.get('/:id', function(req, res, next) {
 
 // CREATE SYMPTOM
 router.post('/', function(req, res, next) {
-  knex('symptoms').insert(req.body, '*').then(newSymptom => {
+  knex('symptoms').insert(req.body, '*')
+  .then(newSymptom => {
     res.json(newSymptom)
   })
   .catch(err => {
